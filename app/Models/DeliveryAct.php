@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class DeliveryAct extends Model
 {
     use HasFactory;
+
+    protected $guarded = false;
 }

@@ -18,11 +18,11 @@ Route::get('/', function () {
 });
 
 Route::group(['namespace'=>'Admin', 'prefix'=>'admin'], function(){
-   Route::group(['namespace'=>'Main'], function (){
+    Route::group(['namespace'=>'Main'], function (){
        Route::get('/','IndexController')->name('admin.index');
-   }) ;
+    }) ;
 
-   Route::group(['namespace'=>'User', 'prefix'=>'users'], function(){
+    Route::group(['namespace'=>'User', 'prefix'=>'users'], function(){
       Route::get('/','IndexController')->name('admin.users.index');
       Route::get('/create','CreateController')->name('admin.users.create');
       Route::post('/','StoreController')->name('admin.users.store');
@@ -31,6 +31,26 @@ Route::group(['namespace'=>'Admin', 'prefix'=>'admin'], function(){
       Route::post('/{user}','UpdateController')->name('admin.users.update');
       Route::delete('/{user}','DeleteController')->name('admin.users.delete');
    });
+
+   Route::group(['namespace'=>'Delivery', 'prefix'=>'deliveries'], function(){
+      Route::get('/','IndexController')->name('admin.deliveries.index');
+      Route::get('/create','CreateController')->name('admin.deliveries.create');
+      Route::post('/','StoreController')->name('admin.deliveries.store');
+      Route::get('/{delivery}','ShowController')->name('admin.deliveries.show');
+      Route::get('/{delivery}/edit','EditController')->name('admin.deliveries.edit');
+      Route::post('/{delivery}','UpdateController')->name('admin.deliveries.update');
+      Route::delete('/{delivery}','DeleteController')->name('admin.deliveries.delete');
+   });
+
+    Route::group(['namespace'=>'Act', 'prefix'=>'acts'], function(){
+        Route::get('/','IndexController')->name('admin.acts.index');
+        Route::get('/create','CreateController')->name('admin.acts.create');
+        Route::post('/','StoreController')->name('admin.acts.store');
+        Route::get('/{act}','ShowController')->name('admin.acts.show');
+        Route::get('/{act}/edit','EditController')->name('admin.acts.edit');
+        Route::post('/{act}','UpdateController')->name('admin.acts.update');
+        Route::delete('/{act}','DeleteController')->name('admin.acts.delete');
+    });
 });
 
 //Route::group(['namespace'=>'Curator', 'prefix'=>'curator'], function(){

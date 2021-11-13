@@ -8,7 +8,6 @@
     <!-- Sidebar -->
     <div class="sidebar">
         <!-- Sidebar Menu -->
-
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">
@@ -28,50 +27,18 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-clipboard"></i>
+                    <a href="{{route('admin.deliveries.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-truck"></i>
                         <p>
-                            Posts
+                            Deliveries
                         </p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-th-list"></i>
+                    <a href="{{route('admin.deliveries.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-file"></i>
                         <p>
-                            Categories
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-tags"></i>
-                        <p>
-                            Tags
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-envelope"></i>
-                        <p>
-                            Contacts
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-comment-alt"></i>
-                        <p>
-                            Comments
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-archive"></i>
-                        <p>
-                            Posts archive
+                            Acts
                         </p>
                     </a>
                 </li>

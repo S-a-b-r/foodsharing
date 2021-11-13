@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Hash;
 
 class StoreController extends Controller
 {
-    public function __invoke(User $user, StoreRequest $req)
+    public function __invoke(StoreRequest $req)
     {
         $data = $req->validated();
         try{
