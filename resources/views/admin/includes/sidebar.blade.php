@@ -20,9 +20,17 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{route('admin.users.index')}}" class="nav-link">
-                        <i class="nav-icon fas fa-users"></i>
+                        <i class="nav-icon fas fa-user"></i>
                         <p>
                             Users
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('admin.shops.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-shopping-basket"></i>
+                        <p>
+                            Shops
                         </p>
                     </a>
                 </li>
@@ -35,10 +43,26 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('admin.deliveries.index')}}" class="nav-link">
+                    <a href="{{route('admin.acts.index')}}" class="nav-link">
                         <i class="nav-icon fas fa-file"></i>
                         <p>
                             Acts
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>
+                            Groups
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('admin.study.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-graduation-cap"></i>
+                        <p>
+                            Study
                         </p>
                     </a>
                 </li>

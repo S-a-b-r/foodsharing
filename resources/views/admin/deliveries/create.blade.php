@@ -16,7 +16,7 @@
             <!-- Small boxes (Stat box) -->
             <div class="row">
                 <div class="col-12">
-                    <form class="col-4" action="{{route('admin.deliveries.store')}}" method="post" enctype="multipart/form-data">
+                    <form class="col-4" action="{{route('admin.deliveries.store')}}" method="post">
                         @csrf
 
                         <div class="form-group col-9">
@@ -75,6 +75,7 @@
                                 @endforeach
                             </select>
                         </div>
+
                         <input type="submit" class="btn btn-primary" value="Добавить">
                     </form>
                 </div>

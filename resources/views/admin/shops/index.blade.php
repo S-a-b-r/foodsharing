@@ -2,10 +2,10 @@
 @extends('admin.layouts.main')
 
 @section('title')
-    Акты
+    Магазины
 @endsection
 @section('subtitle')
-    Акты
+    Магазины
 @endsection
 
 @section('content')
@@ -15,7 +15,7 @@
             <!-- Small boxes (Stat box) -->
             <div class="row">
                 <div class="col-2">
-                    <a href="{{route('admin.acts.create')}}" class="btn btn-block btn-info mb-3">Загрузить акт</a>
+                    <a href="{{route('admin.shops.create')}}" class="btn btn-block btn-info mb-3">Добавить магазин</a>
                 </div>
             </div>
             <div class="row">
@@ -27,23 +27,23 @@
                                 <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Продавец</th>
-                                    <th>Получатель</th>
-                                    <th>Договор</th>
+                                    <th>Название</th>
+                                    <th>Адрес</th>
+                                    <th>Телефон</th>
                                     <th colspan="3" class="text-center">Действие</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($acts as $act)
+                                @foreach($shops as $shop)
                                 <tr>
-                                    <td>{{$act->id}}</td>
-                                    <td>{{$act->seller_id}}</td>
-                                    <td>{{$act->customer_id}}</td>
-                                    <td><img src="{{asset('storage/'.$act->act_img)}}" class="col-10"> </td>
-                                    <td><a href="{{route('admin.acts.show',$act->id)}}"><i class="far fa-eye"></i></a></td>
-                                    <td><a href="{{route('admin.acts.edit',$act->id)}}"><i class="fas fa-pen text-success"></i></a></td>
+                                    <td>{{$shop->id}}</td>
+                                    <td>{{$shop->name}}</td>
+                                    <td>{{$shop->address}}</td>
+                                    <td>{{$shop->contacts}}</td>
+                                    <td><a href="{{route('admin.shops.show',$shop->id)}}"><i class="far fa-eye"></i></a></td>
+                                    <td><a href="{{route('admin.shops.edit',$shop->id)}}"><i class="fas fa-pen text-success"></i></a></td>
                                     <td>
-                                        <form action="{{route('admin.acts.delete', $act->id)}}" method="post">
+                                        <form action="{{route('admin.shops.delete', $shop->id)}}" method="post">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="border-0 bg-transparent">

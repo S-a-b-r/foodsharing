@@ -18,7 +18,7 @@ class AddColumnShopIdToDeliveriesTable extends Migration
             $table->unsignedBigInteger('shop_id')->after('curator_id')->nullable();
 
             $table->index('shop_id','shop_deliveries_idx');
-            $table->foreign('shop_id','shop_deliveries_fk')->on('users')->references('id');
+            $table->foreign('shop_id','shop_deliveries_fk')->on('shops')->references('id');
         });
     }
 

@@ -30,6 +30,7 @@
                                     <th>Куратор</th>
                                     <th>Волонтер</th>
                                     <th>Благополучатель</th>
+                                    <th>Магазин</th>
                                     <th>Записано</th>
                                     <th>Доставлено</th>
                                     <th colspan="2" class="text-center">Действие</th>
@@ -42,6 +43,7 @@
                                     <td>{{$delivery->curator_id}}</td>
                                     <td>{{$delivery->volunteer_id}}</td>
                                     <td>{{$delivery->ward_id}}</td>
+                                    <td>{{$delivery->shop_id}}</td>
                                     <td>{{$delivery->created_at}}</td>
                                     <td>{{$delivery->delivered_at}}</td>
                                     <td><a href="{{route('admin.deliveries.show',$delivery->id)}}" title="Подробнее"><i class="far fa-eye"></i></a></td>

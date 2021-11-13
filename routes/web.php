@@ -32,6 +32,16 @@ Route::group(['namespace'=>'Admin', 'prefix'=>'admin'], function(){
       Route::delete('/{user}','DeleteController')->name('admin.users.delete');
    });
 
+    Route::group(['namespace'=>'Shop', 'prefix'=>'shops'], function(){
+      Route::get('/','IndexController')->name('admin.shops.index');
+      Route::get('/create','CreateController')->name('admin.shops.create');
+      Route::post('/','StoreController')->name('admin.shops.store');
+      Route::get('/{shop}','ShowController')->name('admin.shops.show');
+      Route::get('/{shop}/edit','EditController')->name('admin.shops.edit');
+      Route::post('/{shop}','UpdateController')->name('admin.shops.update');
+      Route::delete('/{shop}','DeleteController')->name('admin.shops.delete');
+   });
+
    Route::group(['namespace'=>'Delivery', 'prefix'=>'deliveries'], function(){
       Route::get('/','IndexController')->name('admin.deliveries.index');
       Route::get('/create','CreateController')->name('admin.deliveries.create');
@@ -50,6 +60,11 @@ Route::group(['namespace'=>'Admin', 'prefix'=>'admin'], function(){
         Route::get('/{act}/edit','EditController')->name('admin.acts.edit');
         Route::post('/{act}','UpdateController')->name('admin.acts.update');
         Route::delete('/{act}','DeleteController')->name('admin.acts.delete');
+    });
+
+    Route::group(['namespace'=>'Study', 'prefix'=>'study'], function(){
+        Route::get('/','IndexController')->name('admin.study.index');
+
     });
 });
 
