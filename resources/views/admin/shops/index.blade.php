@@ -30,7 +30,7 @@
                                     <th>Название</th>
                                     <th>Адрес</th>
                                     <th>Телефон</th>
-                                    <th colspan="3" class="text-center">Действие</th>
+                                    <th colspan="2" class="text-center">Действие</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -41,7 +41,7 @@
                                     <td>{{$shop->address}}</td>
                                     <td>{{$shop->contacts}}</td>
                                     <td><a href="{{route('admin.shops.show',$shop->id)}}"><i class="far fa-eye"></i></a></td>
-                                    <td><a href="{{route('admin.shops.edit',$shop->id)}}"><i class="fas fa-pen text-success"></i></a></td>
+{{--                                    <td><a href="{{route('admin.shops.edit',$shop->id)}}"><i class="fas fa-pen text-success"></i></a></td>--}}
                                     <td>
                                         <form action="{{route('admin.shops.delete', $shop->id)}}" method="post">
                                             @csrf

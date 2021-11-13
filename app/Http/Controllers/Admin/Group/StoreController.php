@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Shop;
+namespace App\Http\Controllers\Admin\Group;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\Shop\StoreRequest;
-use App\Models\Shop;
+use App\Http\Requests\Admin\Group\StoreRequest;
+use App\Models\Group;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -15,10 +15,10 @@ class StoreController extends Controller
     {
         $data = $req->validated();
         DB::beginTransaction();
-        Shop::firstOrCreate($data);
+        Group::firstOrCreate($data);
         DB::commit();
 
 
-        return redirect()->route('admin.shops.index');
+        return redirect()->route('admin.groups.index');
     }
 }

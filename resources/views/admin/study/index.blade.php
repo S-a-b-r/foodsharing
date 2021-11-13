@@ -1,4 +1,4 @@
-@extends('volunteer.layouts.main')
+@extends('admin.layouts.main')
 
 @section('title')
     Главная
