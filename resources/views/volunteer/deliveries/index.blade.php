@@ -30,7 +30,6 @@
                                     <th>Куратор</th>
                                     <th>Волонтер</th>
                                     <th>Благополучатель</th>
-                                    <th>Товары</th>
                                     <th>Магазин</th>
                                     <th>Записано</th>
                                     <th>Доставлено</th>
@@ -44,12 +43,6 @@
                                     <td>{{$delivery->curator_id}}</td>
                                     <td>{{$delivery->volunteer_id}}</td>
                                     <td>{{$delivery->ward_id}}</td>
-                                    <td>
-                                        @foreach($delivery->products as $product)
-                                            {{$product->name}}<br>
-                                        @endforeach
-                                            <a href="{{route('admin.deliveries.product', $delivery)}}"><i class="fas fa-plus-square"></i></a>
-                                    </td>
                                     <td>{{$delivery->shop_id}}</td>
                                     <td>{{$delivery->created_at}}</td>
                                     <td>{{$delivery->delivered_at}}</td>

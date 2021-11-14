@@ -12,6 +12,7 @@ class VolunteerController extends Controller
 {
     public function __invoke(Group $group)
     {
-        return view('admin.groups.volunteer', compact('group'));
+        $volunteers = User::where('role_id',4)->get();
+        return view('admin.groups.volunteer', compact('group','volunteers'));
     }
 }
