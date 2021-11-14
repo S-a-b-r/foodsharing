@@ -46,10 +46,10 @@
                                     </td>
                                     <td>{{$delivery->created_at}}</td>
                                     <td>
-                                        @if($delivery->signature_volunteer == 0)
-                                            <form action="{{route('volunteer.deliveries.confirm', $delivery)}}" method="post">
+                                        @if($delivery->signature_seller == 0)
+                                            <form action="{{route('seller.deliveries.confirm', $delivery)}}" method="post">
                                                 @csrf
-                                                <button type="submit" class="btn btn-info">Подтвердить*</button>
+                                                <button type="submit" class="btn btn-info">Подтвердить заказ*</button>
                                             </form>
                                         @else
                                             Подтверждено
