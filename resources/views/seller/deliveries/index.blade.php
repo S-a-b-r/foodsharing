@@ -46,10 +46,14 @@
                                     </td>
                                     <td>{{$delivery->created_at}}</td>
                                     <td>
-                                        <form action="{{route('seller.deliveries.confirm', $delivery)}}" method="post">
-                                            @csrf
-                                            <button type="submit" class="btn btn-info">Подтвердить передачу*</button>
-                                        </form>
+                                        @if($delivery->signature_volunteer == 0)
+                                            <form action="{{route('volunteer.deliveries.confirm', $delivery)}}" method="post">
+                                                @csrf
+                                                <button type="submit" class="btn btn-info">Подтвердить*</button>
+                                            </form>
+                                        @else
+                                            Подтверждено
+                                        @endif
                                     </td>
                                 </tr>
                                 @endforeach
