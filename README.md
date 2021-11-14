@@ -1,118 +1,88 @@
-Реализованная функциональность
-Функционал 1;
-Функционал 2;
-Функционал 3;
-Особенность проекта в следующем:
-Киллерфича-1;
-Киллерфича-2;
-Киллерфича-3;
-Основной стек технологий:
-HTML, CSS, Bootstrap
-PHP 7, MySQL.
-Symfony, Laravel
-Демо
-Демо сервиса доступно по адресу: http://demo.test
+<h2>Реализованная функциональность</h2>
+<ul>
+<li>Реализована возможность заполнения акта приема-передачи продуктов волонтером и его подписания продавцом.</li>
+<li>Удобное и интуитивно понятное составление расписания</li>
+<li>Обучение и тестирование потенциальных волонтеров</li>
+<li>Приложение адаптировано под мобильные устройства</li>
+</ul>
 
-Реквизиты тестового пользователя: email: testuser@test.ru, пароль: testuser
+<h3>Особенность проекта в следующем:</h3>
+<p>Куратор из своего приложения может:</p>
+<ul>
+<li>Создавать обучение и теста к нему</li>
+<li>Составлять расписание</li>
+<li>Просмотреть статистику по магазину</li>
+</ul>
 
-СРЕДА ЗАПУСКА
-требуется установленный web-сервер с поддержкой PHP(версия 7.4+) интерпретации (apache, nginx);
-требуется установленная СУБД MariaDB (версия 10+);
-требуется установленный пакет name1 для работы с...;
-УСТАНОВКА
-Установка пакета name
-Выполните
+<h2>Основной стек технологий:</h2>
+<p>HTML, CSS, Bootstrap, PHP, MySQL, Laravel</p>
 
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install name1
-sudo apt-get install mariadb-client mariadb-server
-git clone https://github.com/Sinclear/default_readme
-cd default_readme
-...
-База данных
-Необходимо создать пустую базу данных, а подключение к базе прописать в конфигурационный файл сервиса по адресу: папка_сервиса/...
+[comment]: <> (<p>Демо сервиса доступно по адресу: http://demo.test</p>)
 
-sudo systemctl restart mariadb
-sudo mysql_secure_installation
-mysql -u root -p
-mypassword
-CREATE DATABASE mynewdb;
-quit
-Выполнение миграций
-Для заполнения базы данных системной информацией выполните в корневой папке сервиса:
+[comment]: <> (Реквизиты тестового пользователя: email: testuser@test.ru, пароль: testuser)
 
-mysql -u root -p -f mynewdb < папка_сервиса/...
-mypassword
-и согласитесь с запросом
+[comment]: <> (СРЕДА ЗАПУСКА)
 
-Установка зависимостей проекта
-Установка зависимостей осуществляется с помощью Composer. Если у вас его нет вы можете установить его по инструкции на getcomposer.org.
+[comment]: <> (требуется установленный web-сервер с поддержкой PHP&#40;версия 7.4+&#41; интерпретации &#40;apache, nginx&#41;;)
 
-После этого выполнить команду в директории проекта:
+[comment]: <> (требуется установленная СУБД MariaDB &#40;версия 10+&#41;;)
 
-composer install
-РАЗРАБОТЧИКИ
+[comment]: <> (требуется установленный пакет name1 для работы с...;)
 
-Иванов Иван fullstack https://t.me/test@name1
-Особенность проекта в следующем:
-Киллерфича-1;
-Киллерфича-2;
-Киллерфича-3;
-Основной стек технологий:
-LAMP/LEMP/FAMP/FEMP.
-HTML, CSS, JavaScript, TypeScript.
-PHP 7, MySQL.
-Symfony, Laravel, Zend Framework, Yii, Kohana.
-LESS, SASS, PostCSS.
-Gulp, Webpack, Babel.
-БЭМ.
-React (Next.js), Vue (Nuxt.js), Angular.
-Git, Mercurial.
-Jenkins, Gitlab.
-Демо
-Демо сервиса доступно по адресу: http://demo.test
+[comment]: <> (УСТАНОВКА)
 
-Реквизиты тестового пользователя: email: testuser@test.ru, пароль: testuser
+[comment]: <> (Установка пакета name)
 
-СРЕДА ЗАПУСКА
-развертывание сервиса производится на debian-like linux (debian 9+);
-требуется установленный web-сервер с поддержкой PHP(версия 7.4+) интерпретации (apache, nginx);
-требуется установленная СУБД MariaDB (версия 10+);
-требуется установленный пакет name1 для работы с...;
-УСТАНОВКА
-Установка пакета name
-Выполните
+[comment]: <> (Выполните)
 
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install name1
-sudo apt-get install mariadb-client mariadb-server
-git clone https://github.com/Sinclear/default_readme
-cd default_readme
-...
-База данных
-Необходимо создать пустую базу данных, а подключение к базе прописать в конфигурационный файл сервиса по адресу: папка_сервиса/...
+[comment]: <> (sudo apt-get update)
 
-sudo systemctl restart mariadb
-sudo mysql_secure_installation
-mysql -u root -p
-mypassword
-CREATE DATABASE mynewdb;
-quit
-Выполнение миграций
-Для заполнения базы данных системной информацией выполните в корневой папке сервиса:
+[comment]: <> (sudo apt-get upgrade)
 
-mysql -u root -p -f mynewdb < папка_сервиса/...
-mypassword
-и согласитесь с запросом
+[comment]: <> (sudo apt-get install name1)
 
-Установка зависимостей проекта
-Установка зависимостей осуществляется с помощью Composer. Если у вас его нет вы можете установить его по инструкции на getcomposer.org.
+[comment]: <> (sudo apt-get install mariadb-client mariadb-server)
 
-После этого выполнить команду в директории проекта:
+[comment]: <> (git clone https://github.com/Sinclear/default_readme)
 
-composer install
-РАЗРАБОТЧИКИ
+[comment]: <> (cd default_readme)
 
-Иванов Иван fullstack https://t.me/test@name1
+[comment]: <> (...)
+
+[comment]: <> (База данных)
+
+[comment]: <> (Необходимо создать пустую базу данных, а подключение к базе прописать в конфигурационный файл сервиса по адресу: папка_сервиса/...)
+
+[comment]: <> (sudo systemctl restart mariadb)
+
+[comment]: <> (sudo mysql_secure_installation)
+
+[comment]: <> (mysql -u root -p)
+
+[comment]: <> (mypassword)
+
+[comment]: <> (CREATE DATABASE mynewdb;)
+
+[comment]: <> (quit)
+
+[comment]: <> (Выполнение миграций)
+
+[comment]: <> (Для заполнения базы данных системной информацией выполните в корневой папке сервиса:)
+
+[comment]: <> (mysql -u root -p -f mynewdb < папка_сервиса/...)
+
+[comment]: <> (mypassword)
+
+[comment]: <> (и согласитесь с запросом)
+
+[comment]: <> (Установка зависимостей проекта)
+
+[comment]: <> (Установка зависимостей осуществляется с помощью Composer. Если у вас его нет вы можете установить его по инструкции на getcomposer.org.)
+
+[comment]: <> (После этого выполнить команду в директории проекта:)
+
+[comment]: <> (composer install)
+
+<h2>РАЗРАБОТЧИКИ</h2>
+<p>Шамшурин Григорий backend https://t.me/Sabr554</p>
+<p>Чирков Антон frontend https://t.me/TCO932</p>
