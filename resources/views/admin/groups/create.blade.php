@@ -15,39 +15,38 @@
                     <form class="col-4" action="{{route('admin.groups.store')}}" method="post">
                         @csrf
 
-                        <div class="form-group row">
-                            <label>Введите название магазина-партнера</label>
-                            <div class="col-sm-10">
-                                <input class="form-control" name="name" placeholder="Название магазина" value="{{old('name')}}">
-                                @error('name')
-                                    <div class="text-danger">
-                                        {{$message}}
-                                    </div>
-                                @enderror
-                            </div>
+                        <div class="form-group col-9">
+                            <label>
+                                Выберите куратора группы
+                            </label>
+                            <select class="form-control" name="curator_id">
+                                @foreach($curators as $curator)
+                                    <option value="{{$curator->id}}"
+                                        {{$curator->id == old('curator_id')? 'selected':''}} >{{$curator->name}}</option>
+                                @endforeach
+                            </select>
                         </div>
-                        <div class="form-group">
-                            <label>Адрес</label>
-                            <div class="col-sm-10">
-                                <input class="form-control" name="address" placeholder="Address" value="{{old('address')}}">
-                                @error('address')
-                                <div class="text-danger">
-                                    {{$message}}
-                                </div>
-                                @enderror
-                            </div>
+                        <div class="form-group col-9">
+                            <label>
+                                Выберите магазин, который обслуживает группа
+                            </label>
+                            <select class="form-control" name="shop_id">
+                                @foreach($shops as $shop)
+                                    <option value="{{$shop->id}}"
+                                        {{$shop->id == old('shop_id')? 'selected':''}} >{{$shop->name}}</option>
+                                @endforeach
+                            </select>
                         </div>
-                        <div class="form-group row">
-                            <label>Как с вами связаться?</label>
-                            <div class="col-sm-10">
-                                <input class="form-control" name="contacts" placeholder="Contact" value="{{old('contacts')}}">
-                                @error('contacts')
-                                <div class="text-danger">
-                                    {{$message}}
-                                </div>
-                                @enderror
+
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
                             </div>
-                        </div>
+                        @endif
                         <input type="submit" class="btn btn-primary" value="Добавить">
                     </form>
                 </div>

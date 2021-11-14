@@ -45,6 +45,8 @@ Route::group(['namespace'=>'Admin', 'prefix'=>'admin'], function(){
    Route::group(['namespace'=>'Delivery', 'prefix'=>'deliveries'], function(){
       Route::get('/','IndexController')->name('admin.deliveries.index');
       Route::get('/create','CreateController')->name('admin.deliveries.create');
+      Route::get('/{delivery}/product','ProductController')->name('admin.deliveries.product');
+      Route::post('/{delivery}/add','AddProductController')->name('admin.deliveries.addProduct');
       Route::post('/','StoreController')->name('admin.deliveries.store');
       Route::get('/{delivery}','ShowController')->name('admin.deliveries.show');
       Route::get('/{delivery}/edit','EditController')->name('admin.deliveries.edit');
@@ -80,21 +82,46 @@ Route::group(['namespace'=>'Admin', 'prefix'=>'admin'], function(){
     });
 });
 
-//Route::group(['namespace'=>'Curator', 'prefix'=>'curator'], function(){
-//   Route::group(['namespace'=>'Main'], function (){
-//       Route::get('/','IndexController')->name('curator.index');
-//   }) ;
-//
-//   Route::group(['namespace'=>'User', 'prefix'=>'users'], function(){
-//      Route::get('/','IndexController')->name('curator.users.index');
-//      Route::get('/create','CreateController')->name('curator.users.create');
-//      Route::post('/','StoreController')->name('curator.users.store');
-//      Route::get('/{user}','ShowController')->name('curator.users.show');
-//      Route::get('/{user}/edit','EditController')->name('curator.users.edit');
-//      Route::post('/{user}','UpdateController')->name('curator.users.update');
-//      Route::delete('/{user}','DeleteController')->name('curator.users.delete');
-//   });
-//});
+Route::group(['namespace'=>'Volunteer', 'prefix'=>'volunteer'], function(){
+
+    Route::group(['namespace'=>'Main'], function (){
+       Route::get('/','IndexController')->name('volunteer.index');
+    }) ;
+
+   Route::group(['namespace'=>'Delivery', 'prefix'=>'deliveries'], function(){
+      Route::get('/','IndexController')->name('volunteer.deliveries.index');
+      Route::post('/{delivery}/confirm', 'ConfirmController')->name('volunteer.deliveries.confirm');
+       Route::get('/{delivery}/product','ProductController')->name('volunteer.deliveries.product');
+       Route::post('/{delivery}/add','AddProductController')->name('volunteer.deliveries.addProduct');
+      Route::get('/create','CreateController')->name('volunteer.deliveries.create');
+      Route::post('/','StoreController')->name('volunteer.deliveries.store');
+      Route::get('/{delivery}','ShowController')->name('volunteer.deliveries.show');
+      Route::delete('/{delivery}','DeleteController')->name('volunteer.deliveries.delete');
+   });
+
+    Route::group(['namespace'=>'Act', 'prefix'=>'acts'], function(){
+        Route::get('/','IndexController')->name('volunteer.acts.index');
+        Route::get('/create','CreateController')->name('volunteer.acts.create');
+        Route::post('/','StoreController')->name('volunteer.acts.store');
+        Route::get('/{act}','ShowController')->name('volunteer.acts.show');
+    });
+    Route::group(['namespace'=>'Group', 'prefix'=>'groups'], function(){
+        Route::get('/','IndexController')->name('volunteer.groups.index');
+        Route::get('/{group}/schedules','SchedulesController')->name('volunteer.groups.schedules');
+    });
+
+    Route::group(['namespace'=>'Study', 'prefix'=>'study'], function(){
+        Route::get('/','IndexController')->name('volunteer.study.index');
+
+    });
+});
+Route::group(['namespace'=>'Seller', 'prefix'=>'seller'], function(){
+   Route::group(['namespace'=>'Delivery', 'prefix'=>'deliveries'], function(){
+      Route::get('/','IndexController')->name('seller.deliveries.index');
+      Route::post('/{delivery}/confirm', 'ConfirmController')->name('seller.deliveries.confirm');
+      Route::get('/{delivery}','ShowController')->name('seller.deliveries.show');
+   });
+});
 
 Auth::routes();
 

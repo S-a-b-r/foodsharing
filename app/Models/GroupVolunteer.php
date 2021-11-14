@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class GroupVolunteer extends Model
 {
     use HasFactory;
+    protected $guarded = false;
+    protected $fillable = [
+        'volunteer_id',
+        'group_id',
+    ];
 }

@@ -14,4 +14,8 @@ class Delivery extends Model
     protected $table = 'deliveries';
     protected $guarded = false;
 
+    public function products(){
+        return $this->belongsToMany(Product::class, 'delivery_products',  'delivery_id','product_id');
+    }
+
 }
