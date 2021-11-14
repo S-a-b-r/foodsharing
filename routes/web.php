@@ -90,11 +90,12 @@ Route::group(['namespace'=>'Volunteer', 'prefix'=>'volunteer'], function(){
 
    Route::group(['namespace'=>'Delivery', 'prefix'=>'deliveries'], function(){
       Route::get('/','IndexController')->name('volunteer.deliveries.index');
+      Route::post('/{delivery}/confirm', 'ConfirmController')->name('volunteer.deliveries.confirm');
+       Route::get('/{delivery}/product','ProductController')->name('volunteer.deliveries.product');
+       Route::post('/{delivery}/add','AddProductController')->name('volunteer.deliveries.addProduct');
       Route::get('/create','CreateController')->name('volunteer.deliveries.create');
       Route::post('/','StoreController')->name('volunteer.deliveries.store');
       Route::get('/{delivery}','ShowController')->name('volunteer.deliveries.show');
-      Route::get('/{delivery}/edit','EditController')->name('volunteer.deliveries.edit');
-      Route::post('/{delivery}','UpdateController')->name('volunteer.deliveries.update');
       Route::delete('/{delivery}','DeleteController')->name('volunteer.deliveries.delete');
    });
 
@@ -113,6 +114,13 @@ Route::group(['namespace'=>'Volunteer', 'prefix'=>'volunteer'], function(){
         Route::get('/','IndexController')->name('volunteer.study.index');
 
     });
+});
+Route::group(['namespace'=>'Seller', 'prefix'=>'seller'], function(){
+   Route::group(['namespace'=>'Delivery', 'prefix'=>'deliveries'], function(){
+      Route::get('/','IndexController')->name('seller.deliveries.index');
+      Route::post('/{delivery}/confirm', 'ConfirmController')->name('seller.deliveries.confirm');
+      Route::get('/{delivery}','ShowController')->name('seller.deliveries.show');
+   });
 });
 
 Auth::routes();

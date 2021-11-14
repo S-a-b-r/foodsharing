@@ -49,4 +49,8 @@ class User extends Authenticatable
     public function getRole(){
         return $this->belongsTo(Role::class,'role_id','id');
     }
+
+    public function getVolunteerGroup(){
+        return $this->belongsToMany(Group::class, 'group_volunteers',  'volunteer_id','group_id');
+    }
 }

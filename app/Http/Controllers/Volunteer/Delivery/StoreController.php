@@ -18,7 +18,7 @@ class StoreController extends Controller
             DB::beginTransaction();
             $data['acceptance_act_id'] = 1;
             $data['delivery_act_id'] = 2;
-            Delivery::firstOrCreate($data);
+            Delivery::Create($data);
             DB::commit();
         } catch (\Exception $exception){
             DB::rollBack();
@@ -26,6 +26,6 @@ class StoreController extends Controller
         }
 
 
-        return redirect()->route('admin.deliveries.index');
+        return redirect()->route('volunteer.deliveries.index');
     }
 }

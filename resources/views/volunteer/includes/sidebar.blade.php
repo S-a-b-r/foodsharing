@@ -11,31 +11,16 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">
-                    <a href="{{route('admin.index')}}" class="nav-link">
+                    <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-user-cog"></i>
                         <p>
                             Main menu
                         </p>
                     </a>
                 </li>
+
                 <li class="nav-item">
-                    <a href="{{route('admin.users.index')}}" class="nav-link">
-                        <i class="nav-icon fas fa-user"></i>
-                        <p>
-                            Users
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{route('admin.shops.index')}}" class="nav-link">
-                        <i class="nav-icon fas fa-shopping-basket"></i>
-                        <p>
-                            Shops
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{route('admin.deliveries.index')}}" class="nav-link">
+                    <a href="{{route('volunteer.deliveries.index')}}" class="nav-link">
                         <i class="nav-icon fas fa-truck"></i>
                         <p>
                             Deliveries
@@ -43,7 +28,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('admin.acts.index')}}" class="nav-link">
+                    <a href="{{route('volunteer.acts.index')}}" class="nav-link">
                         <i class="nav-icon fas fa-file"></i>
                         <p>
                             Acts
@@ -51,15 +36,15 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('admin.groups.index')}}" class="nav-link">
+                    <a href="{{route('volunteer.groups.index')}}" class="nav-link">
                         <i class="nav-icon fas fa-users"></i>
                         <p>
-                            Groups
+                            My group
                         </p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('admin.study.index')}}" class="nav-link">
+                    <a href="{{route('volunteer.study.index')}}" class="nav-link">
                         <i class="nav-icon fas fa-graduation-cap"></i>
                         <p>
                             Study

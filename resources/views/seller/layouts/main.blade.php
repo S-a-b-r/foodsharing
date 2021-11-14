@@ -85,7 +85,7 @@
         </div>
         <!-- /.content-header -->
     <!-- Content Wrapper. Contains page content -->
-    @include('volunteer.includes.sidebar')
+    @include('seller.includes.sidebar')
     @yield('content')
     </div>
     <!-- /.content-wrapper -->

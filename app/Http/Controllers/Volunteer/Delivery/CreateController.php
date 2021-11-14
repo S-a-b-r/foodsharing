@@ -13,12 +13,14 @@ class CreateController extends Controller
 {
     public function __invoke(Delivery $delivery)
     {
-        $curators = User::where('role_id',3)->get();
-        $volunteers = User::where('role_id',4)->get();
-        $wards = User::where('role_id',5)->get();
-        $shops = User::where('role_id',2)->get();
+        $user = auth()->user();
+        $group = $user->getVolunteerGroup[0];
+        $curator_id = $group->curator_id;
+        $volunteer_id = $user->id;
+        $wards = $group->wards;
+        $shop_id = $group->shop_id;
         $acts = DeliveryAct::all();
 
-        return view('admin.deliveries.create', compact('delivery','curators', 'volunteers', 'wards', 'shops', 'acts'));
+        return view('volunteer.deliveries.create', compact('delivery','curator_id', 'volunteer_id', 'wards', 'shop_id', 'acts'));
     }
 }

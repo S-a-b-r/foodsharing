@@ -12,97 +12,54 @@
         .answer input:checked + div{
             background-color: lightgreen;
         }
-
     </style>
-    <div class="col">
-        <div class="col-10 m-2 p-2">
-            <h3 class="ml-2">Вопрос 1</h3>
-            <div id="text">
-                <div class="row ml-2">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo facilis natus non ratione recusandae. Dolorem doloremque earum explicabo hic laudantium nesciunt odio porro provident quam rerum? Accusantium doloribus sint velit?
-                </div>
-                <div class="row ml-2 justify-content-center">
-                    <script>function showQuestions() {
-                            document.getElementById('questions').className = "ml-2";
-                            document.getElementById('text').className = "d-none";
-                        }
-                    </script>
-                    <button onclick="showQuestions()" class="btn-dark rounded-pill p-1 pl-2 pr-2 m-3">Пройти нест</button>
-                </div>
+
+    <div class="col-md-8 p-2 col mx-2">
+        <form action="" class="mb-4">
+            <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">Название параграфа</label>
+                <input type="text" name="paragraph_name" class="form-control" id="formGroupExampleInput" placeholder="Название параграфа">
             </div>
-            <form action="" id="questions" class="d-none">
-                <div class="col justify-content-between ml-1 mt-2">
-                    <div class="row justify-content-between">
-                        <div class="card m-2" style="width: 18rem;">
-                            <div class="card-body pb-2">
-                                <div class="row">
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur at doloribus est eveniet ipsam iste, iure laboriosam molestias nam omnis quaerat quam quis quod repellat sunt veritatis vero voluptas voluptates.</p>
-                                </div>
-                                <div class="row mt-1 d-flex justify-content-around">
-                                    <label class="flex-grow-1 border-dark border-1 answer">
-                                        <input type="radio" name="answer1" value="yes" class="d-none">
-                                        <div class="col m-0 p-2 text-center">
-                                            <span>Да</span>
-                                        </div>
-                                    </label>
-                                    <label class="flex-grow-1 border-dark border-1 answer">
-                                        <input type="radio" name="answer1" value="no" class="d-none">
-                                        <div class="col m-0 p-2 text-center">
-                                            <span>Нет</span>
-                                        </div>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card m-2" style="width: 18rem;">
-                            <div class="card-body pb-2">
-                                <div class="row">
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur at doloribus est eveniet ipsam iste, iure laboriosam molestias nam omnis quaerat quam quis quod repellat sunt veritatis vero voluptas voluptates.</p>
-                                </div>
-                                <div class="row mt-1 d-flex justify-content-around">
-                                    <label class="flex-grow-1 border-dark border-1 answer">
-                                        <input type="radio" name="answer2" value="yes" class="d-none">
-                                        <div class="col m-0 p-2 text-center">
-                                            <span>Да</span>
-                                        </div>
-                                    </label>
-                                    <label class="flex-grow-1 border-dark border-1 answer">
-                                        <input type="radio" name="answer2" value="no" class="d-none">
-                                        <div class="col m-0 p-2 text-center">
-                                            <span>Нет</span>
-                                        </div>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card m-2" style="width: 18rem;">
-                            <div class="card-body pb-2">
-                                <div class="row">
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur at doloribus est eveniet ipsam iste, iure laboriosam molestias nam omnis quaerat quam quis quod repellat sunt veritatis vero voluptas voluptates.</p>
-                                </div>
-                                <div class="row mt-1 d-flex justify-content-around">
-                                    <label class="flex-grow-1 border-dark border-1 answer">
-                                        <input type="radio" name="answer3" value="yes" class="d-none">
-                                        <div class="col m-0 p-2 text-center">
-                                            <span>Да</span>
-                                        </div>
-                                    </label>
-                                    <label class="flex-grow-1 border-dark border-1 answer">
-                                        <input type="radio" name="answer3" value="no" class="d-none">
-                                        <div class="col m-0 p-2 text-center">
-                                            <span>Нет</span>
-                                        </div>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
+            <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">Текст параграфа</label>
+                <textarea name="paragraph_text" placeholder="Текст параграфа" class="form-control" cols="30" rows="6"></textarea>
+            </div>
+            <div class="row justify-content-center">
+                <button type="submit" class="btn-dark rounded-pill py-2 px-3">Сохранить</button>
+            </div>
+        </form>
+
+
+        <form action="" class="mb-4">
+            <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">Название параграфа</label>
+                <input type="text" name="paragraph_name" class="form-control" id="formGroupExampleInput" placeholder="Название параграфа">
+            </div>
+            <div class="mb-2">
+                <label for="formGroupExampleInput2" class="form-label">Текст параграфа</label>
+                <textarea name="paragraph_text" placeholder="Текст параграфа" class="form-control" cols="30" rows="6"></textarea>
+            </div>
+
+            <div class="row mt-1 d-flex justify-content-around">
+                <label class="flex-grow-1 ml-2 answer">
+                    <input type="radio" name="answer1" value="yes" class="d-none">
+                    <div class="col m-0 p-2 rounded-left text-center">
+                        <span>Да</span>
                     </div>
-                    <div class="row justify-content-center m-2">
-                        <button type="submit" class="btn-dark rounded-pill p-1 pl-2 pr-2">Отправить</button>
+                </label>
+                <label class="flex-grow-1 mr-2 answer">
+                    <input type="radio" name="answer1" value="no" class="d-none">
+                    <div class="col m-0 p-2 rounded-right text-center">
+                        <span>Нет</span>
                     </div>
-                </div>
-            </form>
-        </div>
+                </label>
+            </div>
+
+            <div class="row justify-content-center">
+                <button type="submit" class="btn-dark rounded-pill py-2 px-3">Сохранить</button>
+            </div>
+        </form>
     </div>
 
 @endsection
+

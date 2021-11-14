@@ -10,7 +10,7 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        $deliveries = Delivery::all();
-        return view('admin.deliveries.index', compact('deliveries'));
+        $deliveries = Delivery::where('volunteer_id',auth()->user()->id)->get();
+        return view('volunteer.deliveries.index', compact('deliveries'));
     }
 }

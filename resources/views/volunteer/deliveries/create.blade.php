@@ -1,4 +1,4 @@
-@extends('admin.layouts.main')
+@extends('volunteer.layouts.main')
 
 @section('title')
     Запись доставки
@@ -16,42 +16,20 @@
             <!-- Small boxes (Stat box) -->
             <div class="row">
                 <div class="col-12">
-                    <form class="col-4" action="{{route('admin.deliveries.store')}}" method="post">
+                    <form class="col-4" action="{{route('volunteer.deliveries.store')}}" method="post">
                         @csrf
 
                         <div class="form-group col-9">
-                            <label>
-                                Выберите Куратора, ответственного за доставку
-                            </label>
-                            <select class="form-control" name="curator_id">
-                                @foreach($curators as $curator)
-                                    <option value="{{$curator->id}}"
-                                        {{$curator->id == old('curator_id')? 'selected':''}} >{{$curator->name}}</option>
-                                @endforeach
-                            </select>
+                            <input hidden value="{{$curator_id}}" name="curator_id">
                         </div>
                         <div class="form-group col-9">
-                            <label>
-                                Выберите Магазин-партнер
-                            </label>
-                            <select class="form-control" name="shop_id">
-                                @foreach($shops as $shop)
-                                    <option value="{{$shop->id}}"
-                                        {{$shop->id == old('curator_id')? 'selected':''}} >{{$shop->name}}</option>
-                                @endforeach
-                            </select>
+                            <input hidden value="{{$shop_id}}" name="shop_id">
                         </div>
                         <div class="form-group col-9">
-                            <label>
-                                Выберите Волонтера, ответственного за доставку
-                            </label>
-                            <select class="form-control" name="volunteer_id">
-                                @foreach($volunteers as $volunteer)
-                                    <option value="{{$volunteer->id}}"
-                                        {{$volunteer->id == old('volunteer_id')? 'selected':''}} >{{$volunteer->name}}</option>
-                                @endforeach
-                            </select>
+                            <input hidden value="{{$volunteer_id}}" name="volunteer_id">
                         </div>
+
+
                         <div class="form-group col-9">
                             <label>
                                 Выберите Благополучателя
@@ -63,6 +41,7 @@
                                 @endforeach
                             </select>
                         </div>
+
                         <div class="form-group col-9">
                             <label>
                                 Выберите Акт приема-передачи
@@ -75,6 +54,16 @@
                                 @endforeach
                             </select>
                         </div>
+
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
 
                         <input type="submit" class="btn btn-primary" value="Добавить">
                     </form>

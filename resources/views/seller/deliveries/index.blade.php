@@ -12,13 +12,9 @@
     <section class="content">
         <div class="container-fluid">
             <!-- Small boxes (Stat box) -->
+
             <div class="row">
-                <div class="col-2">
-                    <a href="{{route('volunteer.deliveries.create')}}" class="btn btn-block btn-info mb-3">Записать доставку</a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-10">
+                <div class="col-8">
                     <div class="card">
                         <!-- /.card-header -->
                         <div class="card-body table-responsive p-0">
@@ -33,7 +29,6 @@
                                     <th>Товары</th>
                                     <th>Дата составления</th>
                                     <th>ЭЦП</th>
-                                    <th colspan="2" class="text-center">Действие</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -48,28 +43,12 @@
                                         @foreach($delivery->products as $product)
                                             {{$product->name}}<br>
                                         @endforeach
-                                        <a href="{{route('volunteer.deliveries.product', $delivery)}}"><i class="fas fa-plus-square"></i></a>
                                     </td>
                                     <td>{{$delivery->created_at}}</td>
                                     <td>
-                                        @if($delivery->signature_volunteer == 0)
-                                            <form action="{{route('volunteer.deliveries.confirm', $delivery)}}" method="post">
-                                                @csrf
-                                                <button type="submit" class="btn btn-info">Подтвердить*</button>
-                                            </form>
-                                        @else
-                                            Подтверждено
-                                        @endif
-
-                                    </td>
-                                    <td><a href="{{route('volunteer.deliveries.show',$delivery->id)}}" title="Подробнее"><i class="far fa-eye"></i></a></td>
-                                    <td>
-                                        <form action="{{route('volunteer.deliveries.delete', $delivery->id)}}" method="post">
+                                        <form action="{{route('seller.deliveries.confirm', $delivery)}}" method="post">
                                             @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="border-0 bg-transparent">
-                                                <i class="fas fa-trash text-danger" ></i>
-                                            </button>
+                                            <button type="submit" class="btn btn-info">Подтвердить передачу*</button>
                                         </form>
                                     </td>
                                 </tr>

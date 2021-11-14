@@ -12,6 +12,6 @@ class IndexController extends Controller
     public function __invoke()
     {
         $acts = DeliveryAct::all();
-        return view('admin.study.index');
+        return view('volunteer.study.index');
     }
 }
