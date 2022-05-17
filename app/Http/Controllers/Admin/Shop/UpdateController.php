@@ -9,10 +9,10 @@ use Illuminate\Http\Request;
 
 class UpdateController extends Controller
 {
-    public function __invoke(Shop $user, UpdateRequest $req)
+    public function __invoke(Shop $shop, UpdateRequest $req)
     {
         $data = $req->validated();
-        $user->update($data);
+        $shop->update($data);
         return redirect()->route('admin.shops.index');
     }
 }

@@ -46,16 +46,15 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function getRole(){
+    public function getRoleAttribute(){
         switch ($this->role_id){
             case 1: return 'admin'; break;
             case 2: return 'moderator'; break;
-            case 3: return 'moderator'; break;
+            case 3: return 'curator'; break;
             case 4: return 'volunteer'; break;
             case 5: return 'ward'; break;
             case 6: return 'seller'; break;
         }
-        return $this->belongsTo(Role::class,'role_id','id');
     }
 
     public function getVolunteerGroup(){

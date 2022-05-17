@@ -7,8 +7,8 @@
 
 @section('subtitle')
     <div class="d-flex">
-        Пользователь {{$shop->name}}
-{{--        <a href="{{route('admin.shops.edit',$shop->id)}}"><i class="fas fa-pen text-success ml-2" style="font-size: 18px;"></i></a>--}}
+        Магазин {{$shop->name}}
+        <a href="{{route('admin.shops.edit', $shop->id)}}"><i class="fas fa-pen text-success ml-2" style="font-size: 18px;"></i></a>
         <form action="{{route('admin.shops.delete', $shop->id)}}" method="post" class="ml-2">
             @csrf
             @method('DELETE')

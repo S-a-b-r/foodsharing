@@ -14,7 +14,7 @@ class AddColumnPersonalDataToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->text('personal_data');
+            $table->text('personal_data')->nullable();
         });
     }
 

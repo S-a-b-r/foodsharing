@@ -38,7 +38,7 @@
                                 @foreach($users as $user)
                                 <tr>
                                     <td>{{$user->id}}</td>
-                                    <td>{{$user->getRole->name}}</td>
+                                    <td>{{$user->role}}</td>
                                     <td>{{$user->name}}</td>
                                     <td>{{$user->created_at}}</td>
                                     <td>{{$user->updated_at}}</td>

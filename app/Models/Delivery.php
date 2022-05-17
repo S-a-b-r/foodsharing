@@ -18,4 +18,8 @@ class Delivery extends Model
         return $this->belongsToMany(Product::class, 'delivery_products',  'delivery_id','product_id');
     }
 
+    public function getAct(){
+        return $this->hasOne(Act::class, 'id', 'act_id');
+    }
+
 }

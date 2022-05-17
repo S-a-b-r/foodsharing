@@ -1,7 +1,9 @@
 @extends('admin.layouts.main')
+
 @section('title')
-    Редактирование пользователя {{$user->name}}
+    Редактирование магазина
 @endsection
+
 
 @section('content')
     <!-- Main content -->
@@ -10,14 +12,15 @@
             <!-- Small boxes (Stat box) -->
             <div class="row">
                 <div class="col-12">
-                    <form class="col-4" action="{{route('admin.users.update', $user->id)}}" method="post">
+                    <form class="col-4" action="{{route('admin.shops.update', $shop)}}" method="post">
                         @csrf
+                        @method('patch')
 
-                        <div class="form-group">
-                            <label>Имя пользователя</label>
+                        <div class="form-group row">
+                            <label>Введите название магазина-партнера</label>
                             <div class="col-sm-10">
-                                <input class="form-control" name="name" placeholder="Имя пользователя" value="{{$user->name}}">
-                                @error('title')
+                                <input class="form-control" name="name" placeholder="Название магазина" value="{{$shop->name}}">
+                                @error('name')
                                     <div class="text-danger">
                                         {{$message}}
                                     </div>
@@ -25,30 +28,26 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label>Email</label>
+                            <label>Адрес</label>
                             <div class="col-sm-10">
-                                <input class="form-control" name="email" placeholder="Email" value="{{$user->email}}">
-                                @error('email')
-                                    <div class="text-danger">
-                                        {{$message}}
-                                    </div>
+                                <input class="form-control" name="address" placeholder="Address" value="{{$shop->address}}">
+                                @error('address')
+                                <div class="text-danger">
+                                    {{$message}}
+                                </div>
                                 @enderror
                             </div>
                         </div>
-                        <div>
-                            <input type="hidden" name="user_id" value="{{$user->id}}">
-                        </div>
-
-                        <div class="form-group col-9">
-                            <label>
-                                Изменить
-                            </label>
-                            <select class="form-control" name="role_id">
-                                @foreach($roles as $role)
-                                    <option value="{{$role->id}}"
-                                        {{($role->id == $user->role_id)? 'selected':''}} >{{$role->name}}</option>
-                                @endforeach
-                            </select>
+                        <div class="form-group row">
+                            <label>Как с вами связаться?</label>
+                            <div class="col-sm-10">
+                                <input class="form-control" name="contacts" placeholder="Contact" value="{{$shop->contacts}}">
+                                @error('contacts')
+                                <div class="text-danger">
+                                    {{$message}}
+                                </div>
+                                @enderror
+                            </div>
                         </div>
                         <input type="submit" class="btn btn-primary" value="Сохранить">
                     </form>

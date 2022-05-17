@@ -11,7 +11,6 @@ class CreateController extends Controller
 {
     public function __invoke(Shop $shop)
     {
-        $roles = Role::all();
-        return view('admin.shops.create', compact('shop','roles'));
+        return view('admin.shops.create', compact('shop'));
     }
 }

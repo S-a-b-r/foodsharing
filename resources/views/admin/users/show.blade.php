@@ -39,15 +39,15 @@
                                     </tr>
                                     <tr>
                                         <td>Роль</td>
-                                        <td>{{$user->getRole->name}}</td>
+                                        <td>{{$user->role}}</td>
                                     </tr>
                                     <tr>
                                         <td>Имя</td>
                                         <td>{{$user->name}}</td>
                                     </tr>
                                     <tr>
-                                        <td>Фамилия</td>
-                                        <td>{{$user->second_name}}</td>
+                                        <td>Email</td>
+                                        <td>{{$user->email}}</td>
                                     </tr>
                                     <tr>
                                         <td>Подробная информация</td>
