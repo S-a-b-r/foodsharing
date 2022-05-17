@@ -34,12 +34,7 @@ class CreateDeliveryProductsTable extends Migration
     public function down()
     {
         Schema::disableForeignKeyConstraints();
-        Schema::table('deliveries', function(Blueprint $table) {
-            $table->dropIndex('delivery_idx');
-            $table->dropForeign('delivery_fk');
-            $table->dropIndex('product_idx');
-            $table->dropForeign('product_fk');
-        });
         Schema::dropIfExists('delivery_products');
+        Schema::enableForeignKeyConstraints();
     }
 }
