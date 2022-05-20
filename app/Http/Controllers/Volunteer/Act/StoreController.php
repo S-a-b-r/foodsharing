@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Volunteer\Act;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\Acts\StoreRequest;
+use App\Http\Requests\Admin\Act\StoreRequest;
 use App\Models\DeliveryAct;
 use App\Models\User;
 use Illuminate\Http\Request;

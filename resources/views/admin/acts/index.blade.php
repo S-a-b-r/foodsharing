@@ -27,9 +27,10 @@
                                 <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Продавец</th>
-                                    <th>Получатель</th>
-                                    <th>Договор</th>
+                                    <th>Доставка</th>
+                                    <th>Подтверждено продавцом</th>
+                                    <th>Подтверждено получателем</th>
+                                    <th>Фото документа(если имеется)</th>
                                     <th colspan="3" class="text-center">Действие</th>
                                 </tr>
                                 </thead>
@@ -37,8 +38,12 @@
                                 @foreach($acts as $act)
                                 <tr>
                                     <td>{{$act->id}}</td>
-                                    <td>{{$act->seller_id}}</td>
-                                    <td>{{$act->customer_id}}</td>
+                                    <td>@if(!is_null($act->delivery))<a href="{{route('admin.deliveries.show', $act->delivery)}}">{{$act->delivery->id}}</a>
+                                            @else
+                                                Акт еще не привязан
+                                        @endif</td>
+                                    <td>{{$act->accepted_seller_at}}</td>
+                                    <td>{{$act->accepted_ward_at}}</td>
                                     <td><img src="{{asset('storage/'.$act->act_img)}}" class="col-10"> </td>
                                     <td><a href="{{route('admin.acts.show',$act->id)}}"><i class="far fa-eye"></i></a></td>
                                     <td><a href="{{route('admin.acts.edit',$act->id)}}"><i class="fas fa-pen text-success"></i></a></td>

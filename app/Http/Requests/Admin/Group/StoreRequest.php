@@ -24,7 +24,7 @@ class StoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'curator_id'=> 'required|integer|exists:users,id',
+            'title'=> 'nullable|string',
             'shop_id'=> 'required|integer|exists:shops,id',
         ];
     }

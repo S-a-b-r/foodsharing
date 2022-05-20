@@ -17,15 +17,11 @@
 
                         <div class="form-group col-9">
                             <label>
-                                Выберите куратора группы
+                                Название группы
                             </label>
-                            <select class="form-control" name="curator_id">
-                                @foreach($curators as $curator)
-                                    <option value="{{$curator->id}}"
-                                        {{$curator->id == old('curator_id')? 'selected':''}} >{{$curator->name}}</option>
-                                @endforeach
-                            </select>
+                            <input class="form-control" type="text" name="title" placeholder="Введите название группы">
                         </div>
+
                         <div class="form-group col-9">
                             <label>
                                 Выберите магазин, который обслуживает группа

@@ -44,10 +44,12 @@
                                 Изменить
                             </label>
                             <select class="form-control" name="role_id">
-                                @foreach($roles as $role)
-                                    <option value="{{$role->id}}"
-                                        {{($role->id == $user->role_id)? 'selected':''}} >{{$role->name}}</option>
-                                @endforeach
+                                <option value="1" {{($user->role_id == 1)? 'selected':''}}> Admin </option>
+                                <option value="2" {{($user->role_id == 2)? 'selected':''}}> Moderator </option>
+                                <option value="3" {{($user->role_id == 3)? 'selected':''}}> Куратор </option>
+                                <option value="4" {{($user->role_id == 4)? 'selected':''}}> Волонтер </option>
+                                <option value="5" {{($user->role_id == 5)? 'selected':''}}> Подопечный </option>
+                                <option value="6" {{($user->role_id == 6)? 'selected':''}}> Продавец </option>
                             </select>
                         </div>
                         <input type="submit" class="btn btn-primary" value="Сохранить">

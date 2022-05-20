@@ -16,29 +16,6 @@
                         @csrf
 
                         <div class="form-group col-9">
-                            <label>
-                                Выберите кассира, заключающего договор, из которого забрали продукты
-                            </label>
-                            <select class="form-control" name="seller_id">
-                                @foreach($shop_assistants as $assistant)
-                                    <option value="{{$assistant->id}}"
-                                        {{$assistant->id == old('seller_id')? 'selected':''}} >{{$assistant->name}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="form-group col-9">
-                            <label>
-                                Выберите волонтера, заключающего договор, из которого забрали продукты
-                            </label>
-                            <select class="form-control" name="customer_id">
-                                @foreach($volunteers as $volunteer)
-                                    <option value="{{$volunteer->id}}"
-                                        {{$volunteer->id == old('customer_id')? 'selected':''}}>{{$volunteer->name}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-
-                        <div class="form-group col-9">
                             <label for="exampleInputFile">Добавьте изображение акта, если он в бумажном виде</label>
                             <div class="input-group">
                                 <div class="custom-file">

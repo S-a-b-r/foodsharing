@@ -40,6 +40,12 @@
                                 @foreach($groups as $group)
                                 <tr>
                                     <td>{{$group->id}}</td>
+                                    <td>
+                                        @foreach($group->curators as $curator)
+                                            {{$curator->name}}<br>
+                                        @endforeach
+                                        <a href="{{route('admin.groups.curator',$group)}}"><i class="fas fa-plus-square"></i></a>
+                                    </td>
                                     <td>{{$group->curator_id}}</td>
 
                                     <td>
@@ -52,17 +58,16 @@
                                         @foreach($group->wards as $ward)
                                             {{$ward->name}}
                                         @endforeach
-                                        <a href="{{route('admin.groups.volunteer',$group)}}"><i class="fas fa-plus-square"></i></a>
-
+                                        <a href="{{route('admin.groups.ward',$group)}}"><i class="fas fa-plus-square"></i></a>
                                     </td>
                                     <td>
                                         @foreach($group->sellers as $seller)
                                             {{$seller->name}}
                                         @endforeach
-                                        <a href="{{route('admin.groups.volunteer',$group)}}"><i class="fas fa-plus-square"></i></a>
+                                        <a href="{{route('admin.groups.seller',$group)}}"><i class="fas fa-plus-square"></i></a>
                                     </td>
-                                    <td>{{$group->shop_id}}</td>
-                                    <td><a href="{{route('admin.groups.schedules', $group)}}">Ссылка</a></td>
+                                    <td>{{$group->shop->name}}</td>
+                                    <td><a href="#">Ссылка</a></td>
 {{--                                    <td><a href="{{route('admin.groups.edit',$group->id)}}"><i class="fas fa-pen text-success"></i></a></td>--}}
                                     <td>
                                         <form action="{{route('admin.groups.delete', $group->id)}}" method="post">

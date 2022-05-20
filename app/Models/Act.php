@@ -13,4 +13,8 @@ class Act extends Model
 
     protected $table = 'acts';
     protected $guarded = false;
+
+    public function delivery(){
+        return $this->hasOne(Delivery::class,'act_id','id');
+    }
 }

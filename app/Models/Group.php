@@ -15,12 +15,15 @@ class Group extends Model
     protected $guarded = false;
 
     public function volunteers(){
-        return $this->belongsToMany(User::class, 'group_volunteers',  'group_id','volunteer_id');
+        return $this->hasMany(User::class)->where('role_id','=','4');
     }
     public function wards(){
-        return $this->belongsToMany(User::class, 'group_wards',  'group_id','ward_id');
+        return $this->hasMany(User::class)->where('role_id','=','5');
     }
     public function sellers(){
-        return $this->belongsToMany(User::class, 'group_sellers',  'group_id','seller_id');
+        return $this->hasMany(User::class)->where('role_id','=','6');
+    }
+    public function shop(){
+        return $this->belongsTo(Shop::class);
     }
 }

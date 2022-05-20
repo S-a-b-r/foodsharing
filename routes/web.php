@@ -66,12 +66,11 @@ Route::group(['namespace'=>'Admin', 'prefix'=>'admin'], function(){
     Route::group(['namespace'=>'Group', 'prefix'=>'groups'], function(){
         Route::get('/','IndexController')->name('admin.groups.index');
         Route::get('{group}/add/volunteer','VolunteerController')->name('admin.groups.volunteer');
-        Route::post('{group}/add/volunteer}','AddVolunteerController')->name('admin.groups.addVolunteer');
+        Route::post('{group}/add/volunteer','AddVolunteerController')->name('admin.groups.addVolunteer');
         Route::get('/create','CreateController')->name('admin.groups.create');
         Route::post('/','StoreController')->name('admin.groups.store');
         Route::get('/{group}','ShowController')->name('admin.groups.show');
         Route::get('/{group}/edit','EditController')->name('admin.groups.edit');
-        Route::get('/{group}/schedules','SchedulesController')->name('admin.groups.schedules');
         Route::post('/{group}','UpdateController')->name('admin.groups.update');
         Route::delete('/{group}','DeleteController')->name('admin.groups.delete');
     });

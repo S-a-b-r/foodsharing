@@ -3,16 +3,15 @@
 namespace App\Http\Controllers\Admin\Act;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\User\UpdateRequest;
-use App\Models\DeliveryAct;
-use App\Models\User;
-use Illuminate\Http\Request;
+use App\Http\Requests\Admin\Act\UpdateRequest;
+use App\Models\Act;
 
 class UpdateController extends Controller
 {
-    public function __invoke(DeliveryAct $act, UpdateRequest $req)
+    public function __invoke(Act $act, UpdateRequest $req)
     {
         $data = $req->validated();
+        $act->update($data);
 
         return redirect()->route('admin.acts.index');
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Admin\Acts;
+namespace App\Http\Requests\Admin\Act;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -24,8 +24,6 @@ class StoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'seller_id'=> 'required|integer|exists:users,id',
-            'customer_id'=> 'required|integer|exists:users,id',
             'act_img'=>'nullable|file',
         ];
     }

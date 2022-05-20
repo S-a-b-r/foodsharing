@@ -15,15 +15,12 @@ class CreateGroupsTable extends Migration
     {
         Schema::create('groups', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('curator_id');
             $table->unsignedBigInteger('shop_id');
             $table->timestamps();
             $table->softDeletes();
 
-            $table->index('curator_id','curator_idxe');
             $table->index('shop_id','shop_idxe');
 
-            $table->foreign('curator_id','curator_fke')->on('users')->references('id');
             $table->foreign('shop_id','shop_fke')->on('shops')->references('id');
         });
     }
